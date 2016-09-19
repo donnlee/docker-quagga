@@ -3,8 +3,9 @@ FROM alpine:3.4
 MAINTAINER docker@pluza.com
 
 # Install Quagga
-#RUN apk-install quagga supervisor
-RUN apk -Uuv add bash quagga supervisor \
+# -U : Update cache
+# -v : Verbose
+RUN apk -Uv add bash quagga supervisor \
   && rm /var/cache/apk/*
 
 # Supervisord
