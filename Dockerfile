@@ -17,7 +17,7 @@ ADD zebra.conf /etc/quagga/
 # Expose ports
 EXPOSE 179 2601 2605
 
-# Command
+# Start supervisord, which starts zebra & bgpd daemons.
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
 # Enter the container with:
